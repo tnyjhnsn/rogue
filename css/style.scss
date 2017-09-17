@@ -1,0 +1,366 @@
+@import 'https://fonts.googleapis.com/css?family=Uncial+Antiqua|Open+Sans:300,600';
+@import 'img-data';
+
+$my-black: #1e1e1e;
+$my-grey: #9fa6ad;
+$my-white: #f2f2f2;
+$my-blue: #032e46;
+$my-yellow: #fcb94d;
+$divider: #a5a5a5;
+$background: #666666;
+//$background: #3b3b3c;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.my-modal {
+	background-color: $background;
+	& .header {
+		background-color: $my-yellow;
+	}
+	& .body {
+		background-color: $my-blue;
+		color: $my-white;
+	}
+}
+
+
+body {
+	margin-top: 30px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	background-color: $background;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+textarea {
+	width: 100%;
+	height: 400px;
+	border-style: none; 
+	border-color: transparent; 
+	overflow: auto;        
+}
+
+.dungeon {
+	display: -webkit-flex;
+	display: flex;
+    justify-content: center;
+	color: $my-white;
+}
+
+.title {
+	font-family: "Uncial Antiqua", sans-serif;
+	font-size: 72px;
+	color: $my-yellow;
+	margin-bottom: 5px;
+	margin-right: 20px;
+}
+
+.information {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   -webkit-align-items: flex-end;
+   align-items: flex-end;
+}
+
+.view {
+    margin-right: 20px;
+}
+
+.viewport {
+	position: relative;
+    border: 1px solid #000000;
+    overflow: hidden;
+	flex-shrink: 0;
+	margin-bottom: 20px;
+}
+
+.status {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   -webkit-align-items: flex-start;
+   align-items: flex-start;
+}
+
+.stats > p {
+	margin-bottom: 20px;
+	> span { font-weight: 600; }
+	> div { 
+		display: inline-block;
+		width: 30px;
+		text-align: center;
+		font-weight: 600;
+		background-color: #ffffff;
+	}
+}
+
+.item-management {
+	display: -webkit-flex;
+	display: flex;
+	align-items: flex-start;
+}
+
+.player-location, .inventory, .wearing, .purse {
+	width: 250px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background-color: darken($background, 4);
+	padding: 5px;
+	border-radius: 4px;
+	& > div > span {
+		font-weight: 600;
+	}
+}
+
+.level, .minimap {
+	position: relative;
+	background-color: $my-blue;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+.tiles, .minitiles {
+	position: absolute;
+	background-color: $my-black;
+}
+
+.wall {
+	position: absolute;
+	background-color: $my-black;
+}
+
+.tile {
+	position: absolute;
+	background-color: $my-grey;
+}
+
+.floor {
+	background: $floor64;
+	background-size: 100%;
+}
+
+.seen {
+	opacity: 0.25;
+}
+
+.not-seen {
+	opacity: 0;
+}
+
+.actor-chip {
+	display: -webkit-flex;
+	display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+	padding: 5px 0;
+	border-bottom: 1px solid $divider;
+	& > i {
+		margin-left: auto;
+		margin-right: 0;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+		line-height: 22px;
+		border: 1px solid $divider;
+		border-radius: 4px;
+		cursor: pointer;
+		&:hover {
+			background-color: $divider;
+			color: $background;
+		}
+	}
+}
+
+.chip-icon {
+	font-size: 12px;
+	line-height: 32px;
+    text-align: center;
+}
+
+.chip-name {
+	width: 148px;
+	font-size: 12px;
+	text-align: left;
+	margin-left: 5px;	
+}
+
+// player
+
+.player-m { background: $player-m; background-size: 100%; }
+.player-f { background: $player-f; background-size: 100% }
+
+// weapons
+
+.pick { background: $pick; background-size: 100% }
+.dagger { background: $dagger; background-size: 100% }
+.short-sword { background: $short-sword; background-size: 100% }
+.long-sword { background: $long-sword; background-size: 100% }
+.hammer { background: $hammer; background-size: 100% }
+.long-bow { background: $long-bow; background-size: 100% }
+.cross-bow { background: $cross-bow; background-size: 100% }
+.arrows { background: $arrows; background-size: 100% }
+.bolts { background: $bolts; background-size: 100% }
+
+// rings
+
+.ring-one { background: $ring-one; background-size: 100% }
+.ring-str { background: $ring-str; background-size: 100% }
+.ring1 { background: $ring1; background-size: 100% }
+.ring2 { background: $ring2; background-size: 100% }
+.ring3 { background: $ring3; background-size: 100% }
+.ring4 { background: $ring4; background-size: 100% }
+
+// amulets
+
+.amulet-mother { background: $amulet-mother; background-size: 100% }
+.amulet1 { background: $amulet1; background-size: 100% }
+.amulet2 { background: $amulet2; background-size: 100% }
+.amulet3 { background: $amulet3; background-size: 100% }
+.amulet4 { background: $amulet4; background-size: 100% }
+
+// armours
+
+.leather { background: $leather; background-size: 100% }
+.scale { background: $scale; background-size: 100% }
+.plate { background: $plate; background-size: 100% }
+.adamantite-armour { background: $adamantite-armour; background-size: 100% }
+.shield { background: $shield; background-size: 100% }
+
+// food
+
+.trippy-mushroom { background: $trippy-mushroom; background-size: 100% }
+.yellow-mushroom { background: $yellow-mushroom; background-size: 100% }
+
+// monsters
+
+.gold-dragon { background: $gold-dragon; background-size: 100% }
+.black-dragon { background: $black-dragon; background-size: 100% }
+.red-dragon { background: $red-dragon; background-size: 100% }
+.white-dragon { background: $white-dragon; background-size: 100% }
+
+.grey-mould { background: $grey-mould; background-size: 100% }
+.green-mould { background: $green-mould; background-size: 100% }
+
+.red-ant { background: $red-ant; background-size: 100% }
+
+.white-centipede { background: $white-centipede; background-size: 100% }
+.grey-centipede { background: $grey-centipede; background-size: 100% }
+
+.wolf { background: $wolf; background-size: 100% }
+.hell-hound { background: $hell-hound; background-size: 100% }
+
+.ghost { background: $ghost; background-size: 100% }
+
+.kobold { background: $kobold; background-size: 100% }
+
+.orc0 { background: $orc0; background-size: 100% }
+.orc1 { background: $orc1; background-size: 100% }
+.orc2 { background: $orc2; background-size: 100% }
+
+.black-snake { background: $black-snake; background-size: 100% }
+.brown-snake { background: $brown-snake; background-size: 100% }
+
+.tarantula { background: $tarantula; background-size: 100% }
+
+.skeleton { background: $skeleton; background-size: 100% }
+.mummy { background: $mummy; background-size: 100% }
+.lich { background: $lich; background-size: 100% }
+
+.thief { background: $thief; background-size: 100% }
+
+.black-rat { background: $black-rat; background-size: 100% }
+
+.morgoth { background: $morgoth; background-size: 100% }
+
+// other
+
+.gold { background: $gold; background-size: 100% }
+.adamantite { background: $adamantite; background-size: 100% }
+
+.scroll { background: $scroll; background-size: 100% }
+.shop { background: $shop; background-size: 100% }
+.house { background: $house; background-size: 100% }
+.haunted-house { background: $haunted-house; background-size: 100% }
+.inn { background: $inn; background-size: 100% }
+.morgaine { background: $morgaine; background-size: 100% }
+
+.anti-mould { background: $anti-mould; background-size: 100% }
+.health-potion { background: $health-potion; background-size: 100% }
+.acid-rain { background: $acid-rain; background-size: 100% }
+.dragon-breath { background: $dragon-breath; background-size: 100% }
+
+.wine { background: $wine; background-size: 100% }
+.magic-book { background: $magic-book; background-size: 100% }
+.scroll-unlock { background: $scroll-unlock; background-size: 100% }
+.treasure-chest { background: $treasure-chest; background-size: 100% }
+
+.stairs-down { background: $stairs-down; background-size: 100% }
+.stairs-up { background: $stairs-up; background-size: 100% }
+
+// // morgoth chambers
+// .mc-n1 { background: $mc-n1; background-size: 100% }
+// .mc-n2 { background: $mc-n2; background-size: 100% }
+// .mc-n3 { background: $mc-n3; background-size: 100% }
+// .mc-ne { background: $mc-ne; background-size: 100% }
+// .mc-e1 { background: $mc-e1; background-size: 100% }
+// .mc-e2 { background: $mc-e2; background-size: 100% }
+// .mc-e3 { background: $mc-e3; background-size: 100% }
+// .mc-se { background: $mc-se; background-size: 100% }
+// .mc-s1 { background: $mc-s1; background-size: 100% }
+// .mc-s2 { background: $mc-s2; background-size: 100% }
+// .mc-s3 { background: $mc-s3; background-size: 100% }
+// .mc-sw { background: $mc-sw; background-size: 100% }
+// .mc-w1 { background: $mc-w1; background-size: 100% }
+// .mc-w2 { background: $mc-w2; background-size: 100% }
+// .mc-w3 { background: $mc-w3; background-size: 100% }
+// .mc-nw { background: $mc-nw; background-size: 100% }
+
+// messaging
+
+ul {
+	font-size: 18px;
+	width: 450px;
+	list-style: none;
+	padding-left: 0;
+}
+
+ol {
+	padding-left: 20px;
+}
+
+.msg-player {
+	color: $my-white;
+}
+
+.msg-monster {
+	color: #000000;
+}
+
+.msg-game {
+	color: #fda529;
+}
+
+.msg-good {
+	color: green;
+}
+
+.msg-warning {
+	color: #fda529;
+}
+
+.msg-urgent {
+	color: #ae0000;
+}
+
